@@ -1,0 +1,535 @@
+{
+	"info": {
+		"_postman_id": "7d29b219-ec4f-4bfc-9bae-d2a5d70130f4",
+		"name": "Office collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21499952"
+	},
+	"item": [
+		{
+			"name": "Authenticate (get JWT token)",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Authenticate (get JWT token)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"root\",\r\n    \"password\":\"root\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:51:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwttoken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNjgwOTgzNDcyLCJpYXQiOjE2ODA5NjU0NzJ9.2qai09gm1pGnm1MkOTlhe77_nSSv6IK9snhnLlt_Q0clfEtuOmLruRidFtdaw5sKHTMOXrMzUEfrNf2YuqISwQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Register user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Kaneki\",\r\n    \"password\":\"qwerty\",\r\n    \"age\":\"99\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:43:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 10,\n    \"name\": \"Kaneki\",\n    \"password\": \"$2a$10$Ppc/mM6TzcWSrWfR/1K2aOVyJTwdar2.XwpTlCVsGqwWDSqrn3Zsa\",\n    \"age\": 99,\n    \"articles\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all users with more than age parameter",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users?age=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:52:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Brock Lang\",\n        \"password\": \"$2a$10$2UQI9fv487XzVKkxhlLJ7u/KF./vZuy.LNZO4.l6K8JcffmHw/IqG\",\n        \"age\": 84,\n        \"articles\": [\n            {\n                \"id\": 9,\n                \"text\": \"Alone on a Wide, Wide Sea\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 10,\n                \"text\": \"Endless Night\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 11,\n                \"text\": \"The Last Enemy\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 12,\n                \"text\": \"The Daffodil Sky\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 13,\n                \"text\": \"Ring of Bright Water\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 14,\n                \"text\": \"Death Be Not Proud\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 15,\n                \"text\": \"The Road Less Traveled\",\n                \"color\": \"BLUE\"\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Mitchell Feil\",\n        \"password\": \"$2a$10$KfIT.zmnRewmwMvn7qr8aeNVizge3R4xFW71/I/iqvjbY7hIT/G1C\",\n        \"age\": 51,\n        \"articles\": [\n            {\n                \"id\": 16,\n                \"text\": \"Ring of Bright Water\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 17,\n                \"text\": \"Death Be Not Proud\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 18,\n                \"text\": \"Time of our Darkness\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 19,\n                \"text\": \"When the Green Woods Laugh\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 20,\n                \"text\": \"The Torment of Others\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 21,\n                \"text\": \"A Time of Gifts\",\n                \"color\": \"BLACK\"\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Lizeth Wiza\",\n        \"password\": \"$2a$10$WRwpSwkZBgq2fzCWIOG/ROaEfSQ0EVf9STaX1DKFfrPL3vvK.V6wO\",\n        \"age\": 21,\n        \"articles\": [\n            {\n                \"id\": 22,\n                \"text\": \"Shall not Perish\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 23,\n                \"text\": \"Time To Murder And Create\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 24,\n                \"text\": \"Françoise Sagan\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 25,\n                \"text\": \"Butter In a Lordly Dish\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 26,\n                \"text\": \"Dying of the Light\",\n                \"color\": \"WHITE\"\n            }\n        ]\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Evon Hilpert I\",\n        \"password\": \"$2a$10$Xrv0UeufkPQvrclDIWyFXOTP4D.Yttns8OnwbiONLtQg8zRappxfS\",\n        \"age\": 49,\n        \"articles\": [\n            {\n                \"id\": 27,\n                \"text\": \"The Golden Apples of the Sun\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 28,\n                \"text\": \"The Last Enemy\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 29,\n                \"text\": \"Some Buried Caesar\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 30,\n                \"text\": \"Behold the Man\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 31,\n                \"text\": \"Quo Vadis\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 32,\n                \"text\": \"Tirra Lirra by the River\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 33,\n                \"text\": \"After Many a Summer Dies the Swan\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 34,\n                \"text\": \"For a Breath I Tarry\",\n                \"color\": \"GREEN\"\n            }\n        ]\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Reyes Wilderman\",\n        \"password\": \"$2a$10$YnnCMe57Xlr/Mg4UmR2qeuN4fG90hn/DF5d9OrvfN5eW4oqRVNLYC\",\n        \"age\": 63,\n        \"articles\": [\n            {\n                \"id\": 35,\n                \"text\": \"The Skull Beneath the Skin\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 36,\n                \"text\": \"The Line of Beauty\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 37,\n                \"text\": \"The Road Less Traveled\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 38,\n                \"text\": \"The Moving Finger\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 39,\n                \"text\": \"All Passion Spent\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 40,\n                \"text\": \"Mother Night\",\n                \"color\": \"GREEN\"\n            }\n        ]\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Dr. Simona Ebert\",\n        \"password\": \"$2a$10$uKT8qDj7JEmipsYHJ4575.bqHlz09qQS0blvjeB0oNHREl1m0Zz1W\",\n        \"age\": 84,\n        \"articles\": [\n            {\n                \"id\": 41,\n                \"text\": \"A Glass of Blessings\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 42,\n                \"text\": \"Unweaving the Rainbow\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 43,\n                \"text\": \"A Confederacy of Dunces\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 44,\n                \"text\": \"Cabbages and Kings\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 45,\n                \"text\": \"Death Be Not Proud\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 46,\n                \"text\": \"To Say Nothing of the Dog\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 47,\n                \"text\": \"The Way of All Flesh\",\n                \"color\": \"RED\"\n            }\n        ]\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Dr. Russel Kirlin\",\n        \"password\": \"$2a$10$Q9XzVuEyeemWQJtGjLCKPO.H5BRObehiOyo3u/V.d.h3.iZ3gWyLy\",\n        \"age\": 77,\n        \"articles\": [\n            {\n                \"id\": 48,\n                \"text\": \"As I Lay Dying\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 49,\n                \"text\": \"What's Become of Waring\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 50,\n                \"text\": \"Cabbages and Kings\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 51,\n                \"text\": \"The Skull Beneath the Skin\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 52,\n                \"text\": \"A Monstrous Regiment of Women\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 53,\n                \"text\": \"Infinite Jest\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 54,\n                \"text\": \"The Sun Also Rises\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 55,\n                \"text\": \"An Acceptable Time\",\n                \"color\": \"RED\"\n            }\n        ]\n    },\n    {\n        \"id\": 9,\n        \"name\": \"root\",\n        \"password\": \"$2a$10$SBQwBYmtw/Wi/FhXaxKg4eVbEQD6x65y/MIFkD9F3MItwyY8mx1UC\",\n        \"age\": 20,\n        \"articles\": []\n    },\n    {\n        \"id\": 10,\n        \"name\": \"Kaneki\",\n        \"password\": \"$2a$10$Ppc/mM6TzcWSrWfR/1K2aOVyJTwdar2.XwpTlCVsGqwWDSqrn3Zsa\",\n        \"age\": 99,\n        \"articles\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get all users with articles that have color parameter",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/color?color=WHITE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"color"
+							],
+							"query": [
+								{
+									"key": "color",
+									"value": "WHITE"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:52:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Hedwig Zboncak\",\n        \"password\": \"$2a$10$hXW.UvUahRaLQlThRpfireGzg18x/D1CvnqWzWzJcRRMUbjvHT6BK\",\n        \"age\": 2,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"text\": \"Have His Carcase\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 2,\n                \"text\": \"Beneath the Bleeding\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 3,\n                \"text\": \"Far From the Madding Crowd\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 4,\n                \"text\": \"The Skull Beneath the Skin\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 5,\n                \"text\": \"Recalled to Life\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 6,\n                \"text\": \"The Other Side of Silence\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 7,\n                \"text\": \"The Golden Bowl\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 8,\n                \"text\": \"Vile Bodies\",\n                \"color\": \"WHITE\"\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Lizeth Wiza\",\n        \"password\": \"$2a$10$WRwpSwkZBgq2fzCWIOG/ROaEfSQ0EVf9STaX1DKFfrPL3vvK.V6wO\",\n        \"age\": 21,\n        \"articles\": [\n            {\n                \"id\": 22,\n                \"text\": \"Shall not Perish\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 23,\n                \"text\": \"Time To Murder And Create\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 24,\n                \"text\": \"Françoise Sagan\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 25,\n                \"text\": \"Butter In a Lordly Dish\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 26,\n                \"text\": \"Dying of the Light\",\n                \"color\": \"WHITE\"\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Lizeth Wiza\",\n        \"password\": \"$2a$10$WRwpSwkZBgq2fzCWIOG/ROaEfSQ0EVf9STaX1DKFfrPL3vvK.V6wO\",\n        \"age\": 21,\n        \"articles\": [\n            {\n                \"id\": 22,\n                \"text\": \"Shall not Perish\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 23,\n                \"text\": \"Time To Murder And Create\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 24,\n                \"text\": \"Françoise Sagan\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 25,\n                \"text\": \"Butter In a Lordly Dish\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 26,\n                \"text\": \"Dying of the Light\",\n                \"color\": \"WHITE\"\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Lizeth Wiza\",\n        \"password\": \"$2a$10$WRwpSwkZBgq2fzCWIOG/ROaEfSQ0EVf9STaX1DKFfrPL3vvK.V6wO\",\n        \"age\": 21,\n        \"articles\": [\n            {\n                \"id\": 22,\n                \"text\": \"Shall not Perish\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 23,\n                \"text\": \"Time To Murder And Create\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 24,\n                \"text\": \"Françoise Sagan\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 25,\n                \"text\": \"Butter In a Lordly Dish\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 26,\n                \"text\": \"Dying of the Light\",\n                \"color\": \"WHITE\"\n            }\n        ]\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Dr. Simona Ebert\",\n        \"password\": \"$2a$10$uKT8qDj7JEmipsYHJ4575.bqHlz09qQS0blvjeB0oNHREl1m0Zz1W\",\n        \"age\": 84,\n        \"articles\": [\n            {\n                \"id\": 41,\n                \"text\": \"A Glass of Blessings\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 42,\n                \"text\": \"Unweaving the Rainbow\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 43,\n                \"text\": \"A Confederacy of Dunces\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 44,\n                \"text\": \"Cabbages and Kings\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 45,\n                \"text\": \"Death Be Not Proud\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 46,\n                \"text\": \"To Say Nothing of the Dog\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 47,\n                \"text\": \"The Way of All Flesh\",\n                \"color\": \"RED\"\n            }\n        ]\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Dr. Simona Ebert\",\n        \"password\": \"$2a$10$uKT8qDj7JEmipsYHJ4575.bqHlz09qQS0blvjeB0oNHREl1m0Zz1W\",\n        \"age\": 84,\n        \"articles\": [\n            {\n                \"id\": 41,\n                \"text\": \"A Glass of Blessings\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 42,\n                \"text\": \"Unweaving the Rainbow\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 43,\n                \"text\": \"A Confederacy of Dunces\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 44,\n                \"text\": \"Cabbages and Kings\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 45,\n                \"text\": \"Death Be Not Proud\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 46,\n                \"text\": \"To Say Nothing of the Dog\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 47,\n                \"text\": \"The Way of All Flesh\",\n                \"color\": \"RED\"\n            }\n        ]\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Dr. Simona Ebert\",\n        \"password\": \"$2a$10$uKT8qDj7JEmipsYHJ4575.bqHlz09qQS0blvjeB0oNHREl1m0Zz1W\",\n        \"age\": 84,\n        \"articles\": [\n            {\n                \"id\": 41,\n                \"text\": \"A Glass of Blessings\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 42,\n                \"text\": \"Unweaving the Rainbow\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 43,\n                \"text\": \"A Confederacy of Dunces\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 44,\n                \"text\": \"Cabbages and Kings\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 45,\n                \"text\": \"Death Be Not Proud\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 46,\n                \"text\": \"To Say Nothing of the Dog\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 47,\n                \"text\": \"The Way of All Flesh\",\n                \"color\": \"RED\"\n            }\n        ]\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Dr. Russel Kirlin\",\n        \"password\": \"$2a$10$Q9XzVuEyeemWQJtGjLCKPO.H5BRObehiOyo3u/V.d.h3.iZ3gWyLy\",\n        \"age\": 77,\n        \"articles\": [\n            {\n                \"id\": 48,\n                \"text\": \"As I Lay Dying\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 49,\n                \"text\": \"What's Become of Waring\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 50,\n                \"text\": \"Cabbages and Kings\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 51,\n                \"text\": \"The Skull Beneath the Skin\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 52,\n                \"text\": \"A Monstrous Regiment of Women\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 53,\n                \"text\": \"Infinite Jest\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 54,\n                \"text\": \"The Sun Also Rises\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 55,\n                \"text\": \"An Acceptable Time\",\n                \"color\": \"RED\"\n            }\n        ]\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Dr. Russel Kirlin\",\n        \"password\": \"$2a$10$Q9XzVuEyeemWQJtGjLCKPO.H5BRObehiOyo3u/V.d.h3.iZ3gWyLy\",\n        \"age\": 77,\n        \"articles\": [\n            {\n                \"id\": 48,\n                \"text\": \"As I Lay Dying\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 49,\n                \"text\": \"What's Become of Waring\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 50,\n                \"text\": \"Cabbages and Kings\",\n                \"color\": \"WHITE\"\n            },\n            {\n                \"id\": 51,\n                \"text\": \"The Skull Beneath the Skin\",\n                \"color\": \"BLUE\"\n            },\n            {\n                \"id\": 52,\n                \"text\": \"A Monstrous Regiment of Women\",\n                \"color\": \"RED\"\n            },\n            {\n                \"id\": 53,\n                \"text\": \"Infinite Jest\",\n                \"color\": \"BLACK\"\n            },\n            {\n                \"id\": 54,\n                \"text\": \"The Sun Also Rises\",\n                \"color\": \"GREEN\"\n            },\n            {\n                \"id\": 55,\n                \"text\": \"An Acceptable Time\",\n                \"color\": \"RED\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get unique user names with more than three articles",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/unique-names",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"unique-names"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:53:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Brock Lang\",\n    \"Dr. Russel Kirlin\",\n    \"Dr. Simona Ebert\",\n    \"Evon Hilpert I\",\n    \"Hedwig Zboncak\",\n    \"Lizeth Wiza\",\n    \"Mitchell Feil\",\n    \"Reyes Wilderman\"\n]"
+				}
+			]
+		},
+		{
+			"name": "Add new article to articles list of current authenticated user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Add new article to articles list of current authenticated user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"Some text for article\",\r\n    \"color\":\"WHITE\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/article",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"article"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:53:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 56,\n    \"text\": \"Some text for article\",\n    \"color\": \"WHITE\"\n}"
+				}
+			]
+		}
+	]
+}

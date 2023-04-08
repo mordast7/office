@@ -30,9 +30,10 @@ public class UserController {
     }
 
     @GetMapping(value = "/color", params = "color")
-    public List<User> getUsersByColor(@RequestParam Color color) {
+    public List<User> getUsersByArticleColor(@RequestParam Color color) {
         return userService.findByArticlesColor(color);
     }
+
     @GetMapping("/unique-names")
     public Set<String> getUniqueNamesWithMoreThan3Articles() {
         return userService.findUniqueNamesWithMoreThan3Articles();
